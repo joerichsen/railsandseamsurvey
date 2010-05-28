@@ -1,0 +1,23 @@
+%h1 Summary of answers
+
+- @answers.group_by(&:question_id).sort.each do |question_id, answers|
+  - question = Question.find(question_id)
+
+  %h2= question.title
+  
+  Average Rails rating
+  - rails_ratings = answers.map(&:rails_rating).compact
+  = rails_ratings.sum.to_f / rails_ratings.size
+  == (#{rails_ratings.size} answers)
+  %br
+  Average Seam rating
+  - seam_ratings = answers.map(&:seam_rating).compact
+  = seam_ratings.sum.to_f / seam_ratings.size
+  == (#{seam_ratings.size} answers)
+
+- for survey in @surveys do
+  - unless (survey.winner.blank? && survey.other_comments.blank?)
+    %h2 Winner
+    =h survey.winner
+    %h2 Other comments
+    =h survey.other_comments

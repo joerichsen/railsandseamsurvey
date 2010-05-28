@@ -36,6 +36,7 @@ Mark your assessment and press submit when you're done.
         = answer.object.question.description
         = answer.input :rails_rating, :as => :radio, :collection => (1..5).to_a
         = answer.input :seam_rating, :as => :radio, :collection => (1..5).to_a
+        = answer.input :question_id, :as => :hidden
     = f.input :winner, :label => 'Do you think it is possible to declare a “winner” between Ruby on Rails and Java Seam? Please explain your answer!'
     = f.input :other_comments
   = f.commit_button 'submit'
