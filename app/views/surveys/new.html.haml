@@ -29,9 +29,13 @@
  
 Mark your assessment and press submit when you're done. 
 
-- semantic_form_for :survey do |f|
-  = f.inputs :rails_rating, :for => :answers
-  = f.inputs :seam_rating, :for => :answers
-  = f.input :winner
-  = f.input :other_comments
+- semantic_form_for @survey do |f|
+  - f.inputs do
+    - f.semantic_fields_for :answers do |answer|
+      - answer.inputs answer.object.question.title do
+        = answer.object.question.description
+        = answer.input :rails_rating, :as => :radio, :collection => (1..5).to_a
+        = answer.input :seam_rating, :as => :radio, :collection => (1..5).to_a
+    = f.input :winner, :label => 'Do you think it is possible to declare a “winner” between Ruby on Rails and Java Seam? Please explain your answer!'
+    = f.input :other_comments
   = f.commit_button 'submit'
