@@ -10,7 +10,6 @@ vendor/gems/nokogiri-*/ext/*
 vendor/gems/nokogiri-*/lib/*
 vendor/gems/curb-*/ext/*
 vendor/gems/curb-*/lib/*
-public/stylesheets/*.css
 public/assets
 vendor/gems/**/ext/**/Makefile
 vendor/gems/**/ext/**/*.bundle
