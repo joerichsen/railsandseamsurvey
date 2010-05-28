@@ -17,3 +17,17 @@ float:left;
 margin:0.1em 16px 0.5em;
 }
 
+html[xmlns] form.formtastic > fieldset {
+display:block;
+margin-top:15px;
+}
+
+.answer > legend {
+  font-weight: bold;
+}
+
+table { border: 1px solid; margin-bottom: 10px; }
+th { text-align: left; }
+
+#survey_winner_input > label { float: none; width: 74% }
+#survey_other_comments_input > label { float: none; width: 74% }

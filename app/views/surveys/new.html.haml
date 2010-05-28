@@ -32,7 +32,7 @@ Mark your assessment and press submit when you're done.
 - semantic_form_for @survey do |f|
   - f.inputs do
     - f.semantic_fields_for :answers do |answer|
-      - answer.inputs answer.object.question.title do
+      - answer.inputs answer.object.question.title, :class => 'answer' do
         = answer.object.question.description
         = answer.input :rails_rating, :as => :radio, :collection => (1..5).to_a
         = answer.input :seam_rating, :as => :radio, :collection => (1..5).to_a
