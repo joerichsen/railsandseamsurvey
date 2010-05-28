@@ -15,3 +15,4 @@ vendor/gems/**/ext/**/Makefile
 vendor/gems/**/ext/**/*.bundle
 vendor/gems/**/ext/**/*.o
 vendor/gems/**/lib/*.bundle
+db/*.sqlite3
